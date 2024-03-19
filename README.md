@@ -1,7 +1,11 @@
 # Deploy a simple service on k8s
 
 ## Overview
-This is a simple service that is deployed on k8s. It is a simple web server that returns a simple message.
+This is a simple service that is deployed on k8s. (using civo.com $250 free credit!)
+It is a simple web server that returns a simple message.
+
+## Inspirations
+[https://youtu.be/XltFOyGanYE](https://youtu.be/XltFOyGanYE)
 
 ## Prerequisites
 - A k8s cluster (setup using [civo.com](https://www.civo.com/))
