@@ -21,23 +21,31 @@ This is a simple service that is deployed on k8s. It is a simple web server that
 
 ## Run
 
-Create app
-```bash
-# create docker container
-docker build -t simonprudhomme/k8s-demo:0.0.1 .
-
-# run container locally
-docker run -p 8000:80 simonprudhomme/k8s-demo:0.0.1
-
-# push container to docker push simonprudhomme/k8s-demo:
-docker push simonprudhomme/k8s-demo:0.0.1
-```
-
+1. Create cluster on civo.com or on minikube
 ```bash
 # connect k8s or minikube
-miniKube start
+minikube start
 ```
 
+2. Get kubeconfig file
+```bash
+# get kubeconfig file
+export KUBECONFIG=$PWD/kubeconfig.yaml
+```
+
+3. Build and run/test the container
+```bash
+# create docker container
+docker buildx build --platform=linux/amd64 -t simonprudhomme/k8s-demo:latest .
+
+# run container locally
+docker run -p 8000:80 simonprudhomme/k8s-demo:latest
+
+# push container to docker push simonprudhomme/k8s-demo:
+docker push simonprudhomme/k8s-demo:latest
+```
+
+4. Deploy to k8s
 ```bash
 # deploy app
 kubectl apply -f ./src/app/manifests
@@ -46,6 +54,6 @@ kubectl apply -f ./src/app/manifests
 kubectl get pods
 
 # get service
-kubectl port-forward fast-api-546857df59-69qph 8080:80
+kubectl port-forward fast-api-7cf44c4667-nxrvg 8080:80
 # -> http://localhost:8080
 ```
