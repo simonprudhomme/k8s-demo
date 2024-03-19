@@ -5,7 +5,7 @@ This is a simple service that is deployed on k8s. (using civo.com $250 free cred
 It is a simple web server that returns a simple message.
 
 ## Inspirations
-https://www.youtube.com/watch?v=aZah1laxtFI
+[https://youtu.be/XltFOyGanYE](https://youtu.be/XltFOyGanYE)
 
 ## Prerequisites
 - A k8s cluster (setup using [civo.com](https://www.civo.com/))
